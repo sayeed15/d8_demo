@@ -1,0 +1,11 @@
+d8_demo.static_content:
+  title: Static Content
+  description: 'Demo menu link item for static content.'
+  route_name: d8_demo.static_content
+  parent: system.admin_config_system
+
+d8_demo.weather_config_menu:
+  title: Weather Configuration
+  description: 'Configuration menu item for Weather App.'
+  route_name: d8_demo.weather_config
+  parent: system.admin_config_system

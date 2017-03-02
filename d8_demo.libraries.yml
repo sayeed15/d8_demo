@@ -1,0 +1,8 @@
+d8_demo.weather_widget:
+  js:
+    assets/js/weather_widget.js: {}
+    dependencies:
+      - core/jquery
+  css:
+    theme:
+      assets/css/weather_widget.css: {}

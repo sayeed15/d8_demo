@@ -1,0 +1,8 @@
+d8_demo.tab1:
+  title: Tab 1
+  route_name: d8_demo.arg_content
+  base_route: d8_demo.tab1
+d8_demo.tab2:
+  title: Tab 2
+  route_name: d8_demo.static_content
+  base_route: d8_demo.tab1

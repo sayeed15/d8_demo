@@ -1,0 +1,5 @@
+{
+    "require": {
+        "antoineaugusti/google-books": "^0.3.0"
+    }
+}

@@ -1,0 +1,21 @@
+services:
+  d8_demo.custom_access_check:
+    class: '\Drupal\d8_demo\Access\MenuDemoAccessCheck'
+    arguments: ['@current_user']
+    tags:
+      - {name: 'access_check', applies_to: '_menu_demo_custom_access_check'}
+
+  d8_demo.db_wrapper:
+    class: '\Drupal\d8_demo\DbWrapper'
+    arguments: ['@database']
+
+  d8_demo.add_cors:
+    class: '\Drupal\d8_demo\EventSubscriber\CorsSubscriber'
+    tags:
+      - { name: 'event_subscriber' }
+
+  d8_demo.node_insert_subscriber:
+    class: '\Drupal\d8_demo\EventSubscriber\NodeInsertLogger'
+    arguments: ['@logger.factory']
+    tags:
+      - { name: 'event_subscriber' }

@@ -1,0 +1,30 @@
+<?php
+
+/**
+ * Implements hook_schema().
+ */
+function d8_demo_schema() {
+  $schema = [];
+
+  $schema['d8_demo'] = [
+    'description' => 'Demo table storing Name & sur-name submissions',
+    'fields' => [
+      'first_name' => [
+        'description' => 'First name as inserted by the user.',
+        'type' => 'varchar_ascii',
+        'length' => 40,
+        'not null' => TRUE,
+        'default' => '',
+      ],
+      'last_name' => [
+        'description' => 'Last name as inserted by end-user',
+        'type' => 'varchar_ascii',
+        'length' => 40,
+        'not null' => TRUE,
+        'default' => '',
+      ],
+    ]
+  ];
+
+  return $schema;
+}

@@ -1,0 +1,23 @@
+<?php
+use \Drupal\node\Entity\Node;
+use \Drupal\d8_demo\Event\NodeInsertEvent;
+
+/**
+ * Implements hook_theme().
+ */
+function d8_demo_theme($existing, $type, $theme, $path) {
+  return [
+    'weather_widget' => [
+      'variables' => ['weather_data' => []]
+    ]
+  ];
+}
+
+/**
+ * @param \Drupal\node\Entity\Node $node
+ */
+function d8_demo_node_insert(Node $node) {
+  $dispatcher = \Drupal::service('event_dispatcher');
+  $event = new NodeInsertEvent($node);
+  $dispatcher->dispatch(NodeInsertEvent::NODE_INSERT, $event);
+}

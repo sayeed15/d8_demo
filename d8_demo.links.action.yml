@@ -1,0 +1,5 @@
+d8_demo.add_content_action:
+  route_name: 'node.add_page'
+  title: 'Add Content'
+  appears_on:
+    - 'd8_demo.entity_arg_content'

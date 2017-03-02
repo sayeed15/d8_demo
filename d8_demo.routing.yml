@@ -1,0 +1,73 @@
+d8_demo.static_content:
+  path: '/static-content'
+  defaults:
+    _controller: '\Drupal\d8_demo\Controller\MenuDemoController::staticContent'
+    _title: 'Static Content Demo'
+  requirements:
+    _permission: 'access training content'
+
+d8_demo.arg_content:
+  path: '/arg-demo/{arg}'
+  defaults:
+    _controller: '\Drupal\d8_demo\Controller\MenuDemoController::argContent'
+    _title: 'String Argument Demo'
+    arg: 100s
+  requirements:
+    _role: 'moderator+authenticated'
+
+d8_demo.entity_arg_content:
+  path: '/list/{node}'
+  defaults:
+    _controller: '\Drupal\d8_demo\Controller\MenuDemoController::entityArgContent'
+    _title: 'Entity Argument Demo'
+    node: 1
+  requirements:
+    _menu_demo_custom_access_check: 'TRUE'
+
+d8_demo.entity_multiple_arg_content:
+  path: '/list-multiple/{node1}/{node2}'
+  defaults:
+    _controller: '\Drupal\d8_demo\Controller\MenuDemoController::entityMultipleArgContent'
+    _title: 'Entity Multiple Argument Demo'
+    node1: 1
+    node2: 2
+  options:
+    parameters:
+      node1:
+        type: entity:node
+      node2:
+        type: entity:node
+  requirements:
+    _permission: 'access training content'
+
+d8_demo.simple_form:
+  path: '/simple-form'
+  defaults:
+    _form: '\Drupal\d8_demo\Form\SimpleDemoForm'
+    _title: 'Simple Form Demo'
+  requirements:
+    _permission: 'access training content'
+
+d8_demo.dic_form:
+  path: '/dic-form'
+  defaults:
+    _form: '\Drupal\d8_demo\Form\DicDemoForm'
+    _title: 'DIC Form Demo'
+  requirements:
+    _permission: 'access training content'
+
+d8_demo.state_ajax_demo:
+  path: '/states-ajax-demo'
+  defaults:
+    _form: '\Drupal\d8_demo\Form\StatesAjaxDemoForm'
+    _title: 'States AJAX Form Demo'
+  requirements:
+    _permission: 'access training content'
+
+d8_demo.weather_config:
+  path: '/admin/weather-config'
+  defaults:
+    _form: 'Drupal\d8_demo\Form\WeatherConfigForm'
+    _title: 'Weather App Configuration'
+  requirements:
+    _permission: 'access training content'
